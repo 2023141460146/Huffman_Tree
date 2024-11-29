@@ -8,13 +8,16 @@ extern struct Arr arr[100];
 
 int Sort() 
 {
-	int min = 0;
+	
 	int i = 0;
 	while (arr[i].weight != 0)
 	{
+		
 		char c;
-		int t;
+		int weight;
+		int loc;
 		int j = i;
+		int min = j;
 		while (arr[j].weight!=0)
 		{
 			if (arr[j].weight <= arr[min].weight)	min = j;
@@ -22,11 +25,14 @@ int Sort()
 		}
 
 		c = arr[min].c;
-		t = arr[min].weight;
+		weight = arr[min].weight;
+		loc = arr[min].loc;
 		arr[min].c = arr[i].c;
 		arr[min].weight = arr[i].weight;
+		arr[min].loc = arr[i].loc;
 		arr[i].c = c;
-		arr[i].weight = t;
+		arr[i].weight = weight;
+		arr[i].loc = loc;
 
 		i++;
 	}

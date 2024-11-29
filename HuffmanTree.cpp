@@ -18,11 +18,12 @@ int main()
     cout << "请输入文本：" << endl;
     cin >> input;
     Count(input);
+    Sort();
     
-    while(arr[0].c != -1)
+    while(arr[0].weight != strlen(input))
     {
-        Sort();
         BuildTree();
+        Sort();
     }
 
     cout << "请输入需要查的字母：";
